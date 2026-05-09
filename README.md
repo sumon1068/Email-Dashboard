@@ -56,6 +56,9 @@ Email Dashboard works with WordPress wp_mail() and most SMTP/email delivery plug
 
 GPLv2 or later
 
+## Documentation
+See full guide: https://wppassion.com/plugins/email-dashboard/
+
 ## Author
 
 Developed by [WP Passion](https://wppassion.com)
