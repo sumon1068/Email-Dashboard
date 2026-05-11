@@ -1,4 +1,4 @@
-=== Email Dashboard ===
+=== Mailora Email Composer ===
 Contributors: wppassiondev, sumon1068
 Tags: email, send email, html email, admin email, email log
 Requires at least: 5.0
@@ -12,15 +12,15 @@ Compose and send HTML emails from your WordPress admin dashboard with a rich tex
 
 == Description ==
 
-**Email Dashboard** lets you compose and send HTML emails directly from the WordPress admin — without leaving your site, without touching code, and without needing a separate email platform.
+**Mailora Email Composer** lets you compose and send HTML emails directly from the WordPress admin — without leaving your site, without touching code, and without needing a separate email platform.
 
-Whether you need to send a quick reply to a customer, follow up with a lead, or fire off a formatted HTML message to anyone, Email Dashboard makes it simple.
+Whether you need to send a quick reply to a customer, follow up with a lead, or fire off a formatted HTML message to anyone, Mailora Email Composer makes it simple.
 
 Developed by [WP Passion](https://wppassion.com)
 
-= Why Email Dashboard? =
+= Why Mailora Email Composer? =
 
-Most WordPress sites can already send emails through `wp_mail()`, but there is no built-in interface to compose and send an email from the admin dashboard. Email Dashboard fills that gap with a clean, distraction-free compose screen powered by the familiar WordPress TinyMCE editor.
+Most WordPress sites can already send emails through `wp_mail()`, but there is no built-in interface to compose and send an email from the admin dashboard. Mailora Email Composer fills that gap with a clean, distraction-free compose screen powered by the familiar WordPress TinyMCE editor.
 
 = Features =
 
@@ -45,7 +45,7 @@ Most WordPress sites can already send emails through `wp_mail()`, but there is n
 
 == Installation ==
 
-1. Upload the `email-dashboard` folder to the `/wp-content/plugins/` directory, or install directly through the WordPress Plugins screen.
+1. Upload the `mailora-email-composer` folder to the `/wp-content/plugins/` directory, or install directly through the WordPress Plugins screen.
 2. Activate the plugin through the **Plugins** screen in WordPress.
 3. Go to **Send Email** in the WordPress admin menu.
 4. Enter your From address, recipient, subject, and compose your message.
