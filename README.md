@@ -1,7 +1,7 @@
-# Email Dashboard
+# Mailora Email Composer
 Send HTML emails directly from your WordPress admin dashboard.
 
-Email Dashboard is a lightweight WordPress plugin that provides a clean interface for composing and sending HTML emails using the built-in WordPress editor.
+Mailora Email Composer is a lightweight WordPress plugin that provides a clean interface for composing and sending HTML emails using the built-in WordPress editor.
 
 ## Features
 - Rich HTML email composer
@@ -44,7 +44,7 @@ The plugin automatically retains only the latest 200 entries to prevent database
 
 ## SMTP Compatibility
 
-Email Dashboard works with WordPress wp_mail() and most SMTP/email delivery plugins and services, including:
+Mailora Email Composer works with WordPress wp_mail() and most SMTP/email delivery plugins and services, including:
 
 - WP Mail SMTP
 - Postmark
@@ -57,7 +57,7 @@ Email Dashboard works with WordPress wp_mail() and most SMTP/email delivery plug
 GPLv2 or later
 
 ## Documentation
-See full guide: https://wppassion.com/plugins/email-dashboard/
+See full guide: https://wppassion.com/plugins/mailora-email-composer/
 
 ## Author
 
