@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall Email Dashboard
+ * Uninstall Mailora Email Composer
  *
  * Runs automatically when the plugin is deleted from the WordPress admin.
  * Drops all custom tables and removes any plugin options from wp_options.
