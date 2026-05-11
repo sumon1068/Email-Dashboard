@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Email Dashboard
- * Plugin URI: https://wppassion.com/plugins/email-dashboard/
+ * Plugin Name: Mailora Email Composer
+ * Plugin URI: https://wppassion.com/plugins/mailora-email-composer/
  * Description: Send HTML emails directly from the WordPress admin dashboard. Supports rich text formatting, recipient names, and a full sent email log.
  * Version:     1.0.0
  * Author: WP Passion
  * Author URI: https://wppassion.com/
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: email-dashboard
+ * Text Domain: mailora-email-composer
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +59,7 @@ register_activation_hook( __FILE__, function () {
 add_action( 'admin_init', function () {
     if ( get_transient( 'wpped_activation_redirect' ) ) {
         delete_transient( 'wpped_activation_redirect' );
-        wp_safe_redirect( admin_url( 'admin.php?page=email-dashboard' ) );
+        wp_safe_redirect( admin_url( 'admin.php?page=mailora-email-composer' ) );
         exit;
     }
 } );
@@ -94,10 +94,10 @@ function wpped_update_setting( $key, $value ) {
 // ---------------------------------------------------------------------------
 add_action( 'admin_menu', function () {
     add_menu_page(
-        'Email Dashboard',
-        'Email Dashboard',
+        'Mailora Email Composer',
+        'Mailora Email Composer',
         'manage_options',
-        'email-dashboard',
+        'mailora-email-composer',
         'wpped_render_page',
         'dashicons-email-alt',
         80
@@ -176,7 +176,7 @@ function wpped_handle_log_actions() {
             [ 'id' => absint( $_GET['wpped_log_id'] ) ],
             [ '%d' ]
         );
-        wp_safe_redirect( admin_url( 'admin.php?page=email-dashboard&wpped_tab=log&wpped_deleted=1' ) );
+        wp_safe_redirect( admin_url( 'admin.php?page=mailora-email-composer&wpped_tab=log&wpped_deleted=1' ) );
         exit;
     }
 
@@ -187,7 +187,7 @@ function wpped_handle_log_actions() {
         global $wpdb;
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}wpped_email_log" );
-        wp_safe_redirect( admin_url( 'admin.php?page=email-dashboard&wpped_tab=log&wpped_cleared=1' ) );
+        wp_safe_redirect( admin_url( 'admin.php?page=mailora-email-composer&wpped_tab=log&wpped_cleared=1' ) );
         exit;
     }
 }
@@ -230,7 +230,7 @@ function wpped_process_body( $raw ) {
 // ---------------------------------------------------------------------------
 add_action( 'admin_footer', function () {
     $screen = get_current_screen();
-    if ( ! $screen || $screen->id !== 'toplevel_page_email-dashboard' ) return;
+    if ( ! $screen || $screen->id !== 'toplevel_page_mailora-email-composer' ) return;
     ?>
     <script>
     (function($){
@@ -247,7 +247,7 @@ add_action( 'admin_footer', function () {
         var $overlay = $('#wpped-modal-overlay');
         var $iframe  = $('#wpped-modal-iframe');
         var wppedCurrentEntry = {};
-        <?php $compose_base = admin_url( 'admin.php?page=email-dashboard&wpped_tab=compose' ); ?>
+        <?php $compose_base = admin_url( 'admin.php?page=mailora-email-composer&wpped_tab=compose' ); ?>
         var wppedComposeBase = '<?php echo esc_js( $compose_base ); ?>';
 
         function wppedOpenModal( data ) {
@@ -591,7 +591,7 @@ function wpped_render_log_tab() {
                         <?php foreach ( $logs as $log ) :
                             $delete_nonce = wp_create_nonce( 'wpped_delete_log_' . absint( $log->id ) );
                             $delete_url   = admin_url(
-                                'admin.php?page=email-dashboard&wpped_tab=log'
+                                'admin.php?page=mailora-email-composer&wpped_tab=log'
                                 . '&wpped_action=delete_log'
                                 . '&wpped_log_id=' . absint( $log->id )
                                 . '&wpped_nonce=' . $delete_nonce
@@ -660,13 +660,13 @@ function wpped_render_page() {
     $subject    = $post_verified && isset( $_POST['wpped_subject'] ) ? sanitize_text_field( wp_unslash( $_POST['wpped_subject'] ) ) : '';
     $body       = $post_verified && isset( $_POST['wpped_body'] )    ? wp_kses_post( wp_unslash( $_POST['wpped_body'] ) ) : '';
 
-    $compose_url = admin_url( 'admin.php?page=email-dashboard&wpped_tab=compose' );
-    $log_url     = admin_url( 'admin.php?page=email-dashboard&wpped_tab=log' );
+    $compose_url = admin_url( 'admin.php?page=mailora-email-composer&wpped_tab=compose' );
+    $log_url     = admin_url( 'admin.php?page=mailora-email-composer&wpped_tab=log' );
     ?>
     <div class="wrap">
         <h1>
             <span class="dashicons dashicons-email-alt" style="font-size:28px;vertical-align:middle;margin-right:6px;"></span>
-            Email Dashboard
+            Mailora Email Composer
         </h1>
 
         <nav class="nav-tab-wrapper" style="margin-bottom:0;">
