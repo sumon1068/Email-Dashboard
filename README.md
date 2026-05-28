@@ -20,9 +20,13 @@ Mailora Email Composer is a lightweight WordPress plugin that provides a clean i
 - PHP 7.2+
 
 ## Installation
-Upload the plugin folder to:
-/wp-content/plugins/ <br>
-Activate the plugin through the WordPress admin panel.
+
+**From WordPress (Recommended)**  
+Go to Plugins → Add New, search for *Mailora Email Composer*, install and activate.  
+Or download from WordPress.org: https://wppassion.com/plugins/mailora-email-composer/
+
+**Manual Upload**  
+Upload the ZIP via Plugins → Add New → Upload Plugin, then activate.
 
 ## Usage
 1. Open Send Email from the WordPress admin menu
